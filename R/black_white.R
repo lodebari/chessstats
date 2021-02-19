@@ -3,12 +3,16 @@ library(tidyverse)
 # ----------------------------------------
 # set up
 # ----------------------------------------
-# set work directory (modify if necessary)
+# set work directory (modify as necessary)
 setwd("/home/jordi/PycharmProjects/chessstats/")
 
 # ----------------------------------------
 # read and prepare data
 # ----------------------------------------
+# unzip data
+fname_zip <- './data/twic_2012_2020.zip'
+unzip(fname_zip, exdir = file.path(getwd(), 'data'))
+
 # read data
 fname <- './data/twic_2012_2020.txt'
 pdata <- read.table(fname, sep='\t', header=TRUE)
